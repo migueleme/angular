@@ -2,17 +2,23 @@
   <tr>
     <th>codigo</th>
     <th>fecha</th>
+    <th>trimestre</th>
     <th>direccion</th>
     <th>tipo de entrega</th>
     <th>cliente</th>
-    <th>detalle</th>
+    <th>apellidos</th>
+    <th>DNI</th>
+
   </tr>
   <tr *ngFor="let pedido of pedidos">
     <td>{{pedido.codigo}}</td>
     <td>{{pedido.fecha | date: 'dd/MM/yyyy'}}</td>
+    <td>{{pedido.fecha | trimestre}}</td>
     <td>{{pedido.direccionEntrega.direccion}}</td>
     <td>{{pedido.tipoDeEntrega}}</td>
     <td>{{pedido.cliente.nombre }}</td>
-    <td>{{pedido.detalle}}</td>
+    <td>{{pedido.cliente.apellidos }}</td>
+    <td>{{pedido.cliente.dni }}</td>
+    
   </tr>
 </table>

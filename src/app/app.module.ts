@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListadoClientesComponent } from './components/listado-clientes/listado-clientes.component';
 import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pedidos.component';
 import { ListadoProductosComponent } from './components/listado-productos/listado-productos.component';
+import { TrimestrePipe } from './pipes/trimestre.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListadoProductosComponent } from './components/listado-productos/listad
     HomeComponent,
     ListadoClientesComponent,
     ListadoPedidosComponent,
-    ListadoProductosComponent
+    ListadoProductosComponent,
+    TrimestrePipe
   ],
   imports: [
     AppRoutingModule,
