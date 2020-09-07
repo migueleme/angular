@@ -1,8 +1,18 @@
 <table *ngIf="pedidos" style="border :solid 1px;">
   <tr>
     <th>codigo</th>
+    <th>fecha</th>
+    <th>direccion</th>
+    <th>tipo de entrega</th>
+    <th>cliente</th>
+    <th>detalle</th>
   </tr>
   <tr *ngFor="let pedido of pedidos">
     <td>{{pedido.codigo}}</td>
+    <td>{{pedido.fecha | date: 'dd/MM/yyyy'}}</td>
+    <td>{{pedido.direccionEntrega.direccion}}</td>
+    <td>{{pedido.tipoDeEntrega}}</td>
+    <td>{{pedido.cliente.nombre }}</td>
+    <td>{{pedido.detalle}}</td>
   </tr>
 </table>
