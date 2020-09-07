@@ -1,0 +1,8 @@
+<table *ngIf="pedidos" style="border :solid 1px;">
+  <tr>
+    <th>codigo</th>
+  </tr>
+  <tr *ngFor="let pedido of pedidos">
+    <td>{{pedido.codigo}}</td>
+  </tr>
+</table>
