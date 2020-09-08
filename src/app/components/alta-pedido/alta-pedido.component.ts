@@ -17,15 +17,18 @@ export class AltaPedidoComponent implements OnInit {
 
   ngOnInit() {
       this.pedidoForm = this.formBuilder.group({
-      fecha             :['',Validators.required],
-      tipoDeEntrega     :['',Validators.required],
-      cliente           :['',Validators.required],
-      detalle           :['',Validators.required],
-      direccion         :['',Validators.required],
-      poblacion         :['',Validators.required],
-      codigoPostal      :['',Validators.required],
-      provincia         :['',Validators.required],
-      pais              :['',Validators.required],
+        id :['',Validators.required],
+        fecha :['',Validators.required],
+        direccion :['',Validators.required],
+        poblacion :['',Validators.required],
+        codigoPostal :['',Validators.required],
+        provincia :['',Validators.required],
+        pais :['',Validators.required],
+        tipoDeEntrega :['',Validators.required],
+        dni :['',Validators.required],
+        codigoProducto :['',Validators.required],
+        codigoProveedor :['',Validators.required],
+        cantidad :['',Validators.required],
     });
   }
 
