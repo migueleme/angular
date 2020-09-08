@@ -1,3 +1,9 @@
-<p>
-  alta-producto works!
-</p>
+<br>
+<form [formGroup]= "productoForm" (submit)=create()>
+  <LABEL>codigoProducto</LABEL> <input type="text" formControlName='codigoProducto'><br>  
+  <LABEL>codigoProveedor</LABEL> <input type="text" formControlName='codigoProveedor'><br>  
+  <LABEL>nombre</LABEL> <input type="text" formControlName='nombre'><br>  
+  <LABEL>peso</LABEL> <input type="text" formControlName='peso'><br>  
+  <LABEL>tipoProducto</LABEL> <input type="text" formControlName='tipoProducto'><br>  
+  <button>Crear</button>          
+</form> 

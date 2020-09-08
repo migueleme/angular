@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/model/pedido';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Producto } from 'src/app/model/producto';
+import { PedidoService } from 'src/app/services/pedido-service';
 
 @Component({
   selector: 'app-alta-pedido',
@@ -13,11 +14,10 @@ export class AltaPedidoComponent implements OnInit {
   
   pedidoForm: FormGroup ;
 
-  constructor(private  formBuilder:FormBuilder) { }
+  constructor(private  formBuilder:FormBuilder, private pedidoService: PedidoService) { }
 
   ngOnInit() {
       this.pedidoForm = this.formBuilder.group({
-        id :['',Validators.required],
         fecha :['',Validators.required],
         direccion :['',Validators.required],
         poblacion :['',Validators.required],
@@ -33,8 +33,7 @@ export class AltaPedidoComponent implements OnInit {
   }
 
   crear(){
-    let pedido:Pedido = new Pedido();                                                   
-    pedido.id                              = this.pedidoForm.get('id').value;                                   
+    let pedido:Pedido = new Pedido();                                                                                
     pedido.fecha                           = this.pedidoForm.get('fecha').value;
     pedido.direccion.direccion             = this.pedidoForm.get('direccion').value;
     pedido.direccion.poblacion             = this.pedidoForm.get('poblacion').value;
@@ -49,5 +48,9 @@ export class AltaPedidoComponent implements OnInit {
     let codigo = {codigoProducto,codigoProveedor};
     let producto = new  Producto(codigo);  
     pedido.lineasPedido.push({producto, cantidad}) ;
+    this.pedidoService.create(pedido).subscribe(
+      pedido => console.log(pedido.id)
+    )
+    
   }
 }

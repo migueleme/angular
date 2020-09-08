@@ -8,7 +8,7 @@ export class Producto{
     tipoProducto: string;
 
     constructor(
-        codigo :{
+        codigo? :{
             codigoProducto:  string,
             codigoProveedor: string
         },
