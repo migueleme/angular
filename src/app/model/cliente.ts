@@ -1,15 +1,19 @@
 export class Cliente{
-    nombre:string;
-    fechaAlta:string;
-    tarjetaGold:boolean;
-    apellidos:string;
+    
     dni:string;
+    nombre:string;
+    tarjetaGold:boolean;
+    apellido1:string;
+    apellido2:string;
+    
 
-    constructor( nombre:string,fechaAlta:string,tarjetaGold:boolean, apellidos:string, dni:string){
-        this.apellidos=apellidos;
+    constructor( nombre?:string, apellido1?:string, apellido2?:string, tarjetaGold?:boolean, dni?:string){
+        this.apellido1=apellido1;
+        this.apellido2=apellido2;
         this.dni=dni;
-        this.fechaAlta=fechaAlta;
         this.nombre=nombre;
         this.tarjetaGold=tarjetaGold;
     }
+
+
 }

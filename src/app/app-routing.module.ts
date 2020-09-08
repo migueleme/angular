@@ -5,6 +5,7 @@ import { ListadoClientesComponent } from './components/listado-clientes/listado-
 import { ListadoProductosComponent } from './components/listado-productos/listado-productos.component';
 import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pedidos.component';
 import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
+import { AltaClienteComponent } from './components/alta-cliente/alta-cliente.component';
 
 const routes: Routes = 
 [
@@ -12,7 +13,8 @@ const routes: Routes =
   { path:'listado-clientes',component:ListadoClientesComponent},
   { path:'listado-productos',component:ListadoProductosComponent},
   { path:'listado-pedidos',component:ListadoPedidosComponent},
-  { path:'alta-pedido',component:AltaPedidoComponent}
+  { path:'alta-pedido',component:AltaPedidoComponent},
+  { path:'alta-cliente',component:AltaClienteComponent}
 
 ];
 

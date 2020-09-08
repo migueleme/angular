@@ -1,5 +1,5 @@
-<h2>Alta pedido</h2>
-{{pedido | json}}
+<h2>Alta cliente</h2>
+{{cliente | json}}
 <br>
 <input type="text" [(ngModel)]="cliente.dni" /><br>
 <input type="text" [(ngModel)]="cliente.nombre" /><br>
@@ -8,6 +8,4 @@
 <input type="text" [(ngModel)]="cliente.apellido2" /><br>
 
 
-<button (click)= crear()>CREAR</button>
-
-
+<button (click)= altaCliente()>CREAR</button>

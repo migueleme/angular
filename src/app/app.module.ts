@@ -11,6 +11,7 @@ import { ListadoProductosComponent } from './components/listado-productos/listad
 import { TrimestrePipe } from './pipes/trimestre.pipe';
 import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AltaClienteComponent } from './components/alta-cliente/alta-cliente.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ListadoPedidosComponent,
     ListadoProductosComponent,
     TrimestrePipe,
-    AltaPedidoComponent
+    AltaPedidoComponent,
+    AltaClienteComponent
     
   ],
   imports: [
