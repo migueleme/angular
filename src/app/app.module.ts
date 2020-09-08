@@ -9,6 +9,9 @@ import { ListadoClientesComponent } from './components/listado-clientes/listado-
 import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pedidos.component';
 import { ListadoProductosComponent } from './components/listado-productos/listado-productos.component';
 import { TrimestrePipe } from './pipes/trimestre.pipe';
+import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,13 +20,17 @@ import { TrimestrePipe } from './pipes/trimestre.pipe';
     ListadoClientesComponent,
     ListadoPedidosComponent,
     ListadoProductosComponent,
-    TrimestrePipe
+    TrimestrePipe,
+    AltaPedidoComponent
+    
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

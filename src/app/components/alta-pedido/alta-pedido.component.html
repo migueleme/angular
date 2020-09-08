@@ -1,0 +1,12 @@
+<h2>Alta pedido</h2>
+{{pedido | json}}
+<br>
+<input type="text" [(ngModel)]="pedido.codigo" /><br>
+<input type="text" [(ngModel)]="pedido.fecha" /><br>
+<input type="text" [(ngModel)]="pedido.tipoDeEntrega" /><br>
+<input type="text" [(ngModel)]="pedido.cliente" /><br>
+
+
+<button (click)= crear()>CREAR</button>
+
+

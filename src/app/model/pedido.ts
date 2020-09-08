@@ -1,5 +1,6 @@
 import { Direccion } from './direccion';
 import { Cliente } from './cliente';
+import { Producto } from './producto';
 
 export class Pedido{
     codigo : number;
@@ -7,23 +8,31 @@ export class Pedido{
     direccionEntrega : Direccion;
     tipoDeEntrega: string;
     cliente : Cliente;
-    detalle : string; //TODO cambiar a objeto detalle pedido cuando este solucionado
+    detalle :[
+        {
+            producto: Producto,
+            cantidad: number
+          }
+    ]; 
+  
     constructor(
-        codigo : number,
-        fecha: string,
-        direccionEntrega : Direccion,
-        tipoDeEntrega: string,
-        cliente : Cliente,
-        detalle : string   
+        codigo? : number,
+        fecha?: string,
+        direccionEntrega? : Direccion,
+        tipoDeEntrega?: string,
+        cliente? : Cliente,
+        detalle? : [
+            {
+                producto: Producto,
+                cantidad: number
+              }
+        ]   
     ){
         this.codigo             =codigo;                           
         this.fecha              =fecha;
         this.direccionEntrega   =direccionEntrega;
         this.tipoDeEntrega      =tipoDeEntrega;
         this.cliente            =cliente;
-        this.detalle            =detalle;
-    
+        this.detalle            =detalle;   
     }
-
-
 }

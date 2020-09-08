@@ -11,10 +11,10 @@ export class Direccion{
         provincia: string   ,
         pais: string        
     ){
-    this.direccion=direccion;
-    this.poblacion=poblacion;
-    this.codigoPostal=codigoPostal;
-    this.provincia=provincia;
-    this.pais=pais;
+    this.direccion      =direccion;
+    this.poblacion      =poblacion;
+    this.codigoPostal   =codigoPostal;
+    this.provincia      =provincia;
+    this.pais           =pais;
     }
 }
