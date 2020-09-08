@@ -2,15 +2,15 @@
   <tr>
     <th>dni</th>
     <th>nombre</th>
-    <th>apellidos</th>
-    <th>fechaAlta</th>
+    <th>apellido1</th>
+    <th>apellido2</th>   
     <th>tarjetaGold</th>
   </tr>
   <tr *ngFor="let cliente of clientes">
     <td>{{cliente.dni}}</td>
     <td>{{cliente.nombre}}</td>
-    <td>{{cliente.apellidos}}</td>
-    <td>{{cliente.fechaAlta | date: 'dd/MM/yyyy'}}</td>
+    <td>{{cliente.apellido1}}</td>
+    <td>{{cliente.apellido2}}</td>
     <td>{{cliente.tarjetaGold}}</td>
   </tr>
 </table>

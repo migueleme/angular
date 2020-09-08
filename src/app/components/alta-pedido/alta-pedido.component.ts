@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/model/pedido';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-alta-pedido',
@@ -9,43 +10,12 @@ import { Pedido } from 'src/app/model/pedido';
 export class AltaPedidoComponent implements OnInit {
 
   pedido:Pedido = new Pedido();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  crear(){
-
-    //llamamos al servicio para crearlo
-
-    //si el formulario 
-
-    //navegare al listado de pedidos, o a la ficha de pedido
-
-  }
-  /**
-   * 
-<form [formGroup]= "productForm" (submit)=create()>
-  <input type="text" formControlName="codigo" /><br>
-  <input type="text" formControlName="fecha" /><br>
-  <input type="text" formControlName="tipoDeEntrega" /><br>
-  <input type="text" formControlName="cliente" /><br>
-  <input type="text" formControlName="detalle" /><br>
-  <input type="text" formControlName="direccion" /><br>
-  <input type="text" formControlName="poblacion" /><br>
-  <input type="text" formControlName="codigoPostal" /><br>
-  <input type="text" formControlName="provincia" /><br>
-  <input type="text" formControlName="pais" /><br>
-  <button type="submit">Crear</button>          
-</form> 
-pedido:Pedido = new Pedido();
   pedidoForm: FormGroup;
 
   constructor(private  formBuilder:FormBuilder) { }
 
   ngOnInit() {
-    this.pedidoForm = this.formBuilder.group({
+      this.pedidoForm = this.formBuilder.group({
       codigo            :[this.pedido.codigo],
       fecha             :[this.pedido.fecha            ],      
       tipoDeEntrega     :[this.pedido.tipoDeEntrega    ], 
@@ -68,5 +38,5 @@ pedido:Pedido = new Pedido();
     //navegare al listado de pedidos, o a la ficha de pedido
 
   }
-   */
+ 
 }

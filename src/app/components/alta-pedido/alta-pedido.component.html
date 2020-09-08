@@ -1,12 +1,21 @@
 <h2>Alta pedido</h2>
 {{pedido | json}}
 <br>
-<input type="text" [(ngModel)]="cliente.dni" /><br>
-<input type="text" [(ngModel)]="cliente.nombre" /><br>
-<input type="text" [(ngModel)]="cliente.tarjetaGold" /><br>
-<input type="text" [(ngModel)]="cliente.apellido1" /><br>
-<input type="text" [(ngModel)]="cliente.apellido2" /><br>
+<form [formGroup]= "pedidoForm" (submit)=create()>
+    <input type="text" formControlName="codigo" /><br>
+    <input type="text" formControlName="fecha" /><br>
+    <input type="text" formControlName="tipoDeEntrega" /><br>
+    <input type="text" formControlName="cliente" /><br>
+    <input type="text" formControlName="detalle" /><br>
+    <input type="text" formControlName="direccion" /><br>
+    <input type="text" formControlName="poblacion" /><br>
+    <input type="text" formControlName="codigoPostal" /><br>
+    <input type="text" formControlName="provincia" /><br>
+    <input type="text" formControlName="pais" /><br>
+    <button type="submit">Crear</button>          
+  </form> 
 
+  
 
 <button (click)= crear()>CREAR</button>
 
