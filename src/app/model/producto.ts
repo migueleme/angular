@@ -12,9 +12,9 @@ export class Producto{
             codigoProducto:  string,
             codigoProveedor: string
         },
-        nombre: string,
-        peso: number,
-        tipoProducto: string
+        nombre?: string,
+        peso?: number,
+        tipoProducto?: string
     ){
         this.codigo.codigoProducto=codigo.codigoProducto;
         this.codigo.codigoProveedor=codigo.codigoProveedor;

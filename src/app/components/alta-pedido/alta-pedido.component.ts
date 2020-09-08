@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/model/pedido';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Producto } from 'src/app/model/producto';
 
 @Component({
   selector: 'app-alta-pedido',
@@ -9,34 +10,41 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AltaPedidoComponent implements OnInit {
 
-  pedido:Pedido = new Pedido();
-  pedidoForm: FormGroup;
+  
+  pedidoForm: FormGroup ;
 
   constructor(private  formBuilder:FormBuilder) { }
 
   ngOnInit() {
       this.pedidoForm = this.formBuilder.group({
-      codigo            :[this.pedido.codigo],
-      fecha             :[this.pedido.fecha            ],      
-      tipoDeEntrega     :[this.pedido.tipoDeEntrega    ], 
-      cliente           :[this.pedido.cliente          ], 
-      detalle           :[this.pedido.detalle          ],
-      direccion         :[this.pedido.direccionEntrega.direccion         ],
-      poblacion         :[this.pedido.direccionEntrega.poblacion         ],
-      codigoPostal      :[this.pedido.direccionEntrega.codigoPostal      ],
-      provincia         :[this.pedido.direccionEntrega.provincia         ],
-      pais              :[this.pedido.direccionEntrega.pais              ],
+      fecha             :['',Validators.required],
+      tipoDeEntrega     :['',Validators.required],
+      cliente           :['',Validators.required],
+      detalle           :['',Validators.required],
+      direccion         :['',Validators.required],
+      poblacion         :['',Validators.required],
+      codigoPostal      :['',Validators.required],
+      provincia         :['',Validators.required],
+      pais              :['',Validators.required],
     });
   }
 
   crear(){
-
-    //llamamos al servicio para crearlo
-
-    //si el formulario 
-
-    //navegare al listado de pedidos, o a la ficha de pedido
-
+    let pedido:Pedido = new Pedido();                                                   
+    pedido.id                              = this.pedidoForm.get('id').value;                                   
+    pedido.fecha                           = this.pedidoForm.get('fecha').value;
+    pedido.direccion.direccion             = this.pedidoForm.get('direccion').value;
+    pedido.direccion.poblacion             = this.pedidoForm.get('poblacion').value;
+    pedido.direccion.codigoPostal          = this.pedidoForm.get('codigoPostal').value;
+    pedido.direccion.provincia             = this.pedidoForm.get('provincia').value;
+    pedido.direccion.pais                  = this.pedidoForm.get('pais').value;
+    pedido.tipoDeEntrega                   = this.pedidoForm.get('tipoDeEntrega').value;
+    pedido.cliente.dni                     = this.pedidoForm.get('dni').value; 
+    let codigoProducto :string             = this.pedidoForm.get('codigoProducto').value
+    let codigoProveedor:string             = this.pedidoForm.get('codigoProveedor').value
+    let cantidad                           = this.pedidoForm.get('cantidad').value
+    let codigo = {codigoProducto,codigoProveedor};
+    let producto = new  Producto(codigo);  
+    pedido.lineasPedido.push({producto, cantidad}) ;
   }
- 
 }

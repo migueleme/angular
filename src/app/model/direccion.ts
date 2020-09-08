@@ -5,11 +5,11 @@ export class Direccion{
     provincia: string;
     pais: string;
     constructor(
-        direccion:string    ,
-        poblacion: string   ,
-        codigoPostal: number,
-        provincia: string   ,
-        pais: string        
+        direccion?:string    ,
+        poblacion?: string   ,
+        codigoPostal?: number,
+        provincia?: string   ,
+        pais?: string        
     ){
     this.direccion      =direccion;
     this.poblacion      =poblacion;

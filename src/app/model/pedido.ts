@@ -3,12 +3,12 @@ import { Cliente } from './cliente';
 import { Producto } from './producto';
 
 export class Pedido{
-    codigo : number;
+    id : number;
     fecha: string;
-    direccionEntrega : Direccion;
+    direccion : Direccion;
     tipoDeEntrega: string;
     cliente : Cliente;
-    detalle :[
+    lineasPedido :[
         {
             producto: Producto,
             cantidad: number
@@ -16,23 +16,23 @@ export class Pedido{
     ]; 
   
     constructor(
-        codigo? : number,
+        id? : number,
         fecha?: string,
-        direccionEntrega? : Direccion,
+        direccion? : Direccion,
         tipoDeEntrega?: string,
         cliente? : Cliente,
-        detalle? : [
+        lineasPedido? : [
             {
                 producto: Producto,
                 cantidad: number
               }
         ]   
     ){
-        this.codigo             =codigo;                           
+        this.id                 =id;                           
         this.fecha              =fecha;
-        this.direccionEntrega   =direccionEntrega;
+        this.direccion          =direccion;
         this.tipoDeEntrega      =tipoDeEntrega;
         this.cliente            =cliente;
-        this.detalle            =detalle;   
+        this.lineasPedido       =lineasPedido;   
     }
 }
