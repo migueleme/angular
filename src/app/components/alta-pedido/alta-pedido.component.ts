@@ -57,6 +57,17 @@ eliminarLinea(index: number) {
     pedido.cliente = new Cliente();
     pedido.cliente.dni                     = this.pedidoForm.get('dni').value; 
     let producto = new  Producto(); 
+     
+    let eLineasDetalle =  this.pedidoForm.get('lineasDetalle').value;
+    
+      console.log(eLineasDetalle[0]);
+      console.log(eLineasDetalle[1]);
+    console.log(eLineasDetalle.array);
+   
+   /* .array.forEach(element => {
+      console.log(element.get('codigoProducto').value);
+    });*/
+
     let codigo = { codigoProducto : this.pedidoForm.get('codigoProducto').value,codigoProveedor: this.pedidoForm.get('codigoProveedor').value}
     producto.codigo = codigo;
     let cantidad                           = this.pedidoForm.get('cantidad').value;

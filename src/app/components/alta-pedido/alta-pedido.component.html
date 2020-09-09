@@ -1,7 +1,7 @@
 <h2>Alta pedido</h2>
 <br>
-<form [formGroup]= "pedidoForm"  (submit)="create()">
- 
+<form [formGroup]= "pedidoForm"  >
+  
   <label>fecha: </label><input type="text" formControlName='fecha'><br>
   <label>direccion: </label><input type="text" formControlName='direccion'><br>
   <label>poblacion: </label><input type="text" formControlName='poblacion'><br>
@@ -20,11 +20,11 @@
       <label>codigoProducto: </label><input type="text" formControlName='codigoProducto'><br>
       <label>codigoProveedor: </label><input type="text" formControlName='codigoProveedor'><br>
       <label>cantidad: </label><input type="text" formControlName='cantidad'><br>
-      
+      <button (click)="eliminarLinea(i)">Eliminar linea</button>
     </div>
     <button (click)="annadirLinea()">Añadir linea</button>
   </div>
-  <button >Crear</button>          
+  <button (click)="create()">Crear</button>          
 </form> 
 
   
