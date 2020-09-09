@@ -1,24 +1,23 @@
 <h2>Alta pedido</h2>
-{{pedido | json}}
 <br>
-<form [formGroup]= "pedidoForm" (submit)=create()>
+<form [formGroup]= "pedidoForm" >
  
-  <label>fecha: </label><input type="text" formControlName='fecha'><span *ngIf="pedidoForm.get('fecha').errors?.required">es requerido</span><br>
-  <label>direccion: </label><input type="text" formControlName='direccion'><span *ngIf="pedidoForm.get('direccion').errors?.required">es requerido</span><br>
-  <label>poblacion: </label><input type="text" formControlName='poblacion'><span *ngIf="pedidoForm.get('poblacion').errors?.required">es requerido</span><br>
-  <label>codigoPostal: </label><input type="text" formControlName='codigoPostal'><span *ngIf="pedidoForm.get('codigoPostal').errors?.required">es requerido</span><br>
-  <label>provincia: </label><input type="text" formControlName='provincia'><span *ngIf="pedidoForm.get('provincia').errors?.required">es requerido</span><br>
-  <label>pais: </label><input type="text" formControlName='pais'><span *ngIf="pedidoForm.get('pais').errors?.required">es requerido</span><br>
+  <label>fecha: </label><input type="text" formControlName='fecha'><br>
+  <label>direccion: </label><input type="text" formControlName='direccion'><br>
+  <label>poblacion: </label><input type="text" formControlName='poblacion'><br>
+  <label>codigoPostal: </label><input type="text" formControlName='codigoPostal'><br>
+  <label>provincia: </label><input type="text" formControlName='provincia'><br>
+  <label>pais: </label><input type="text" formControlName='pais'><br>
   <label>tipoDeEntrega: </label>
   <select formControlName='tipoDeEntrega'>
     <option>STANDARD</option>¡
     <option>EXPRESS</option>
-  </select><span *ngIf="pedidoForm.get('tipoDeEntrega').errors?.required">es requerido</span><br>
-  <label>dni: </label><input type="text" formControlName='dni'><span *ngIf="pedidoForm.get('dni').errors?.required">es requerido</span><br>
-  <label>codigoProducto: </label><input type="text" formControlName='codigoProducto'><span *ngIf="pedidoForm.get('codigoProducto').errors?.required">es requerido</span><br>
-  <label>codigoProveedor: </label><input type="text" formControlName='codigoProveedor'><span *ngIf="pedidoForm.get('codigoProveedor').errors?.required">es requerido</span><br>
-  <label>cantidad: </label><input type="text" formControlName='cantidad'><span *ngIf="pedidoForm.get('cantidad').errors?.required">es requerido</span><br>
-  <button >Crear</button>          
+  </select><br>
+  <label>dni: </label><input type="text" formControlName='dni'><br>
+  <label>codigoProducto: </label><input type="text" formControlName='codigoProducto'><br>
+  <label>codigoProveedor: </label><input type="text" formControlName='codigoProveedor'><br>
+  <label>cantidad: </label><input type="text" formControlName='cantidad'><br>
+  <button (click) = "create()" >Crear</button>          
 </form> 
 
   

@@ -16,8 +16,7 @@ export class Producto{
         peso?: number,
         tipoProducto?: string
     ){
-        this.codigo.codigoProducto=codigo.codigoProducto;
-        this.codigo.codigoProveedor=codigo.codigoProveedor;
+        this.codigo =codigo;
         this.nombre=nombre;
         this.peso=peso;
         this.tipoProducto=tipoProducto;       

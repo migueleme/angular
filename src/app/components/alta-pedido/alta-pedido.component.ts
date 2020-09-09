@@ -3,6 +3,8 @@ import { Pedido } from 'src/app/model/pedido';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Producto } from 'src/app/model/producto';
 import { PedidoService } from 'src/app/services/pedido-service';
+import { Direccion } from 'src/app/model/direccion';
+import { Cliente } from 'src/app/model/cliente';
 
 @Component({
   selector: 'app-alta-pedido',
@@ -32,23 +34,25 @@ export class AltaPedidoComponent implements OnInit {
     });
   }
 
-  crear(){
+  create(){
     let pedido:Pedido = new Pedido();                                                                                
     pedido.fecha                           = this.pedidoForm.get('fecha').value;
+    pedido.direccion = new Direccion();
     pedido.direccion.direccion             = this.pedidoForm.get('direccion').value;
     pedido.direccion.poblacion             = this.pedidoForm.get('poblacion').value;
     pedido.direccion.codigoPostal          = this.pedidoForm.get('codigoPostal').value;
     pedido.direccion.provincia             = this.pedidoForm.get('provincia').value;
     pedido.direccion.pais                  = this.pedidoForm.get('pais').value;
     pedido.tipoDeEntrega                   = this.pedidoForm.get('tipoDeEntrega').value;
+    pedido.cliente = new Cliente();
     pedido.cliente.dni                     = this.pedidoForm.get('dni').value; 
-    let codigoProducto :string             = this.pedidoForm.get('codigoProducto').value
-    let codigoProveedor:string             = this.pedidoForm.get('codigoProveedor').value
+    let producto = new  Producto(); 
+    let codigo = { codigoProducto : this.pedidoForm.get('codigoProducto').value,codigoProveedor: this.pedidoForm.get('codigoProveedor').value}
+    producto.codigo = codigo;
     let cantidad                           = this.pedidoForm.get('cantidad').value
-    let codigo = {codigoProducto,codigoProveedor};
-    let producto = new  Producto(codigo);  
-    pedido.lineasPedido.push({producto, cantidad}) ;
-    this.pedidoService.create(pedido).subscribe(
+    pedido.lineasPedido = [{producto, cantidad}] ;
+    console.log(pedido);
+    this.pedidoService.create([pedido]).subscribe(
       pedido => console.log(pedido.id)
     )
     

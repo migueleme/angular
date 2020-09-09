@@ -18,8 +18,8 @@ export class PedidoService {
   getAll():Observable<Pedido[]>{
     return this.http.get<Pedido[]>(urlBase + "pedidos"); 
   }
-  create(pedido:Pedido): Observable<Pedido>{
-    return this.http.post<Pedido>(urlBase + "pedidos",pedido);
+  create(pedidos:Pedido[]): Observable<Pedido>{
+    return this.http.post<Pedido>(urlBase + "pedidos",pedidos);
   }
 
  }
