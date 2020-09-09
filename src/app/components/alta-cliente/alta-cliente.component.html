@@ -1,11 +1,11 @@
 <h2>Alta cliente</h2>
 {{cliente | json}}
 <br>
-<input type="text" [(ngModel)]="cliente.dni" /><br>
-<input type="text" [(ngModel)]="cliente.nombre" /><br>
-<input type="text" [(ngModel)]="cliente.tarjetaGold" /><br>
-<input type="text" [(ngModel)]="cliente.apellido1" /><br>
-<input type="text" [(ngModel)]="cliente.apellido2" /><br>
+<label>dni</label><input type="text" [(ngModel)]="cliente.dni" /><br>
+<label>nombre</label><input type="text" [(ngModel)]="cliente.nombre" /><br>
+<label>tarjetaGold</label><input type="text" [(ngModel)]="cliente.tarjetaGold" /><br>
+<label>apellido1</label><input type="text" [(ngModel)]="cliente.apellido1" /><br>
+<label>apellido2</label><input type="text" [(ngModel)]="cliente.apellido2" /><br>
 
 
 <button (click)= altaCliente()>CREAR</button>
