@@ -16,23 +16,22 @@ export class AltaPedidoComponent implements OnInit {
 
   
   pedidoForm: FormGroup ;
-  dni:string;
+  dni:string = '';
   constructor(private  formBuilder:FormBuilder, private pedidoService: PedidoService, private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe( params => this.dni = params['dni']);
-      this.pedidoForm = this.formBuilder.group({
-        fecha :['',Validators.required],
-        direccion :['',Validators.required],
-        poblacion :['',Validators.required],
-        codigoPostal :['',Validators.required],
-        provincia :['',Validators.required],
-        pais :['',Validators.required],
-        tipoDeEntrega :['',Validators.required],
-        dni :[this.dni,Validators.required],
-        lineasDetalle : new FormArray([])
+    this.pedidoForm = this.formBuilder.group({
+      fecha :['',Validators.required],
+      direccion :['',Validators.required],
+      poblacion :['',Validators.required],
+      codigoPostal :['',Validators.required],
+      provincia :['',Validators.required],
+      pais :['',Validators.required],
+      tipoDeEntrega :['',Validators.required],
+      dni :[this.dni,Validators.required],
+      lineasDetalle : new FormArray([])
     });
-    
   }
  annadirLinea() {
   (<FormArray>this.pedidoForm.controls['lineasDetalle']).push(new FormGroup({
@@ -60,7 +59,7 @@ eliminarLinea(index: number) {
     let producto = new  Producto(); 
     let codigo = { codigoProducto : this.pedidoForm.get('codigoProducto').value,codigoProveedor: this.pedidoForm.get('codigoProveedor').value}
     producto.codigo = codigo;
-    let cantidad                           = this.pedidoForm.get('cantidad').value
+    let cantidad                           = this.pedidoForm.get('cantidad').value;
     pedido.lineasPedido = [{producto, cantidad}] ;
     console.log(pedido);
     this.pedidoService.create([pedido]).subscribe(
