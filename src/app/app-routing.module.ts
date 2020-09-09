@@ -7,6 +7,7 @@ import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pe
 import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
 import { AltaClienteComponent } from './components/alta-cliente/alta-cliente.component';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
+import { FichaDetallePedidoComponent } from './components/ficha-detalle-pedido/ficha-detalle-pedido.component';
 
 const routes: Routes = 
 [
@@ -14,9 +15,10 @@ const routes: Routes =
   { path:'listado-clientes',component:ListadoClientesComponent},
   { path:'listado-productos',component:ListadoProductosComponent},
   { path:'listado-pedidos',component:ListadoPedidosComponent},
-  { path:'alta-pedido',component:AltaPedidoComponent},
+  { path:'alta-pedido/:dni',component:AltaPedidoComponent},
   { path:'alta-cliente',component:AltaClienteComponent},
-  { path:'alta-producto',component:AltaProductoComponent}
+  { path:'alta-producto',component:AltaProductoComponent},
+  { path:'ficha-detalle-pedido/:id',component:FichaDetallePedidoComponent}
 ];
 
 @NgModule({

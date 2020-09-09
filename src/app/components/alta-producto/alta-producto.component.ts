@@ -25,7 +25,6 @@ export class AltaProductoComponent implements OnInit {
       })
     }
   create(){
-    console.log(this.productoForm.get('codigoProducto').value,this.productoForm.get('codigoProveedor').value );
     this.productoService.create(
       {    
         codigo :{

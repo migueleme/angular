@@ -9,6 +9,7 @@
     <th>apellido1</th>
     <th>apellido2</th>
     <th>DNI</th>
+    <th>detalles</th>
 
   </tr>
   <tr *ngFor="let pedido of pedidos">
@@ -21,6 +22,6 @@
     <td>{{pedido.cliente.apellido1 }}</td>
     <td>{{pedido.cliente.apellido2 }}</td>
     <td>{{pedido.cliente.dni }}</td>
-    
+    <td><a [routerLink]="['/ficha-detalle-pedido', pedido.id]">ver más</a></td>    
   </tr>
 </table>

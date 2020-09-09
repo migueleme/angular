@@ -5,6 +5,7 @@
     <th>apellido1</th>
     <th>apellido2</th>   
     <th>tarjetaGold</th>
+    <th>opciones</th>
   </tr>
   <tr *ngFor="let cliente of clientes">
     <td>{{cliente.dni}}</td>
@@ -12,5 +13,6 @@
     <td>{{cliente.apellido1}}</td>
     <td>{{cliente.apellido2}}</td>
     <td>{{cliente.tarjetaGold}}</td>
+    <td><a [routerLink]="['/alta-pedido', cliente.dni]">alta pedido</a></td>
   </tr>
 </table>

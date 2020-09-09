@@ -1,0 +1,17 @@
+<table *ngIf="pedido" style="border :solid 1px;">
+  <tr>
+    <th>codigo</th>
+    <th>nombre</th>
+    <th>peso</th>
+    <th>tipoProducto</th>
+    <th>cantidad</th>
+  </tr>
+  <tr *ngFor="let lineaPedido of pedido.lineasPedido">
+    <td>{{lineaPedido.producto.codigo.codigoProducto+" 
+        "+lineaPedido.producto.codigo.codigoProveedor}}</td>
+    <td>{{lineaPedido.producto.nombre}}</td>
+    <td>{{lineaPedido.producto.peso}}</td>
+    <td>{{lineaPedido.producto.tipoProducto}}</td>
+    <td>{{lineaPedido.cantidad}}</td>
+  </tr>
+</table>

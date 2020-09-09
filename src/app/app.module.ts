@@ -13,6 +13,7 @@ import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.compon
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AltaClienteComponent } from './components/alta-cliente/alta-cliente.component';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
+import { FichaDetallePedidoComponent } from './components/ficha-detalle-pedido/ficha-detalle-pedido.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AltaProductoComponent } from './components/alta-producto/alta-producto.
     TrimestrePipe,
     AltaPedidoComponent,
     AltaClienteComponent,
-    AltaProductoComponent
+    AltaProductoComponent,
+    FichaDetallePedidoComponent
     
   ],
   imports: [
