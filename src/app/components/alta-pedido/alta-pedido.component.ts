@@ -54,7 +54,7 @@ eliminarLinea(index: number) {
     pedido.direccion.codigoPostal          = this.pedidoForm.get('codigoPostal').value;
     pedido.direccion.provincia             = this.pedidoForm.get('provincia').value;
     pedido.direccion.pais                  = this.pedidoForm.get('pais').value;
-    pedido.tipoDeEntrega                   = this.pedidoForm.get('tipoDeEntrega').value;
+    pedido.tipoEntrega                   = this.pedidoForm.get('tipoDeEntrega').value;
     pedido.cliente = new Cliente();
     pedido.cliente.dni                     = this.pedidoForm.get('dni').value; 
     

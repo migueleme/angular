@@ -7,7 +7,7 @@ export class Pedido{
     id : number;
     fecha: string;
     direccion : Direccion;
-    tipoDeEntrega: string;
+    tipoEntrega: string;
     cliente : Cliente;
     lineasPedido : LineaPedido[];
   
@@ -15,7 +15,7 @@ export class Pedido{
         id? : number,
         fecha?: string,
         direccion? : Direccion,
-        tipoDeEntrega?: string,
+        tipoEntrega?: string,
         cliente? : Cliente,
         lineasPedido? : [
             {
@@ -27,7 +27,7 @@ export class Pedido{
         this.id                 =id;                           
         this.fecha              =fecha;
         this.direccion          =direccion;
-        this.tipoDeEntrega      =tipoDeEntrega;
+        this.tipoEntrega        =tipoEntrega;
         this.cliente            =cliente;
         this.lineasPedido       =lineasPedido;   
     }
