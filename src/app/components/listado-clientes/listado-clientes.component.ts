@@ -10,9 +10,14 @@ import { ClienteService } from 'src/app/services/cliente-service';
 export class ListadoClientesComponent implements OnInit {
 
   clientes:Cliente[] = undefined;
-  
+  displayedColumns: string[] = ["dniCol",
+      "nombreCol",
+      "apellido1Col",
+      "apellido2Col",
+      "tarjetaGoldCol",
+      "opcionesCol"];
+      
   constructor(private clienteService:ClienteService) { }
-
   ngOnInit() {
     this.clienteService.getAll().subscribe(
       data => this.clientes = data

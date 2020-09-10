@@ -1,11 +1,12 @@
 <h2>Alta cliente</h2>
 {{cliente | json}}
 <br>
-<label>dni</label><input type="text" [(ngModel)]="cliente.dni" /><br>
-<label>nombre</label><input type="text" [(ngModel)]="cliente.nombre" /><br>
-<label>Tarjeta Gold</label><input type="radio" name="valid" id="validTrue" (click)="cliente.tarjetaGold = true" [checked]="cliente.tarjetaGold"/><br>
-<label>apellido1</label><input type="text" [(ngModel)]="cliente.apellido1" /><br>
-<label>apellido2</label><input type="text" [(ngModel)]="cliente.apellido2" /><br>
+<form>
+    <label>dni</label><input type="text" [(ngModel)]="cliente.dni" /><br>
+    <label>nombre</label><input type="text" [(ngModel)]="cliente.nombre" /><br>
+    <label>TarjetaGold</label><input type="radio" name="valid" id="validTrue" (click)="cliente.tarjetaGold = true" [checked]="cliente.tarjetaGold"/><br>
+    <label>apellido1</label><input type="text" [(ngModel)]="cliente.apellido1" /><br>
+    <label>apellido2</label><input type="text" [(ngModel)]="cliente.apellido2" /><br>
+    <button mat-button color="primary" (click)= altaCliente()>CREAR</button>
+</form>
 
-
-<button mat-button color="primary" (click)= altaCliente()>CREAR</button>

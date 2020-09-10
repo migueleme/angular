@@ -1,18 +1,35 @@
-<table *ngIf="clientes" style="border :solid 1px;">
-  <tr>
-    <th>dni</th>
-    <th>nombre</th>
-    <th>apellido1</th>
-    <th>apellido2</th>   
-    <th>tarjetaGold</th>
-    <th>opciones</th>
-  </tr>
-  <tr *ngFor="let cliente of clientes">
-    <td>{{cliente.dni}}</td>
-    <td>{{cliente.nombre}}</td>
-    <td>{{cliente.apellido1}}</td>
-    <td>{{cliente.apellido2}}</td>
-    <td>{{cliente.tarjetaGold}}</td>
-    <td><a [routerLink]="['/alta-pedido', cliente.dni]">alta pedido</a></td>
-  </tr>
+
+<table mat-table [dataSource]="clientes" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="dniCol">
+    <th mat-header-cell *matHeaderCellDef> dni </th>
+    <td mat-cell *matCellDef="let cliente"> {{cliente.dni}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreCol">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let cliente"> {{cliente.nombre}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido1Col">
+    <th mat-header-cell *matHeaderCellDef> apellido 1 </th>
+    <td mat-cell *matCellDef="let cliente"> {{cliente.apellido1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido2Col">
+    <th mat-header-cell *matHeaderCellDef> apellido 2 </th>
+    <td mat-cell *matCellDef="let cliente"> {{cliente.apellido2}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tarjetaGoldCol">
+    <th mat-header-cell *matHeaderCellDef>tarjetaGold</th>
+    <td mat-cell *matCellDef="let cliente"> {{cliente.tarjetaGold}} </td>
+  </ng-container>
+  <ng-container matColumnDef="opcionesCol">
+    <th mat-header-cell *matHeaderCellDef>opciones</th>
+    <td mat-cell *matCellDef="let cliente"><a mat-button [routerLink]="['/alta-pedido', cliente.dni]">alta pedido</a> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

@@ -16,6 +16,8 @@ import { AltaProductoComponent } from './components/alta-producto/alta-producto.
 import { FichaDetallePedidoComponent } from './components/ficha-detalle-pedido/ficha-detalle-pedido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
