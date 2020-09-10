@@ -6,6 +6,7 @@ import { PedidoService } from 'src/app/services/pedido-service';
 import { Direccion } from 'src/app/model/direccion';
 import { Cliente } from 'src/app/model/cliente';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LineaPedido } from 'src/app/model/LineaPedido';
 
 @Component({
   selector: 'app-alta-pedido',
@@ -30,18 +31,18 @@ export class AltaPedidoComponent implements OnInit {
       pais :['',Validators.required],
       tipoDeEntrega :['',Validators.required],
       dni :[this.dni,Validators.required],
-      lineasDetalle : new FormArray([])
+      lineasPedido : new FormArray([])
     });
   }
  annadirLinea() {
-  (<FormArray>this.pedidoForm.controls['lineasDetalle']).push(new FormGroup({
+  (<FormArray>this.pedidoForm.controls['lineasPedido']).push(new FormGroup({
     codigoProducto  :new FormControl('', Validators.required),
     codigoProveedor :new FormControl('', Validators.required),
     cantidad        :new FormControl('', Validators.required),
   }));
 }
 eliminarLinea(index: number) {
-  (<FormArray>this.pedidoForm.controls['lineasDetalle']).removeAt(index);
+  (<FormArray>this.pedidoForm.controls['lineasPedido']).removeAt(index);
 }
 
   create(){
@@ -56,22 +57,29 @@ eliminarLinea(index: number) {
     pedido.tipoDeEntrega                   = this.pedidoForm.get('tipoDeEntrega').value;
     pedido.cliente = new Cliente();
     pedido.cliente.dni                     = this.pedidoForm.get('dni').value; 
-    let producto = new  Producto(); 
-     
-    let eLineasDetalle =  this.pedidoForm.get('lineasDetalle').value;
     
-      console.log(eLineasDetalle[0]);
-      console.log(eLineasDetalle[1]);
-    console.log(eLineasDetalle.array);
-   
+     
+    let eLineasPedido =  this.pedidoForm.get('lineasPedido').value;
+    pedido.lineasPedido = new Array();
+    
+
+    for(let linea of eLineasPedido){
+      let codigo = { codigoProducto : linea.codigoProducto,
+                     codigoProveedor:  linea.codigoProveedor }
+     
+      let cantidad = linea.cantidad;
+      let producto = new  Producto(); 
+      producto.codigo = codigo;
+      pedido.lineasPedido.push({producto, cantidad}) ;
+      
+    }
+         console.log(pedido.lineasPedido);
+
    /* .array.forEach(element => {
       console.log(element.get('codigoProducto').value);
     });*/
 
-    let codigo = { codigoProducto : this.pedidoForm.get('codigoProducto').value,codigoProveedor: this.pedidoForm.get('codigoProveedor').value}
-    producto.codigo = codigo;
-    let cantidad                           = this.pedidoForm.get('cantidad').value;
-    pedido.lineasPedido = [{producto, cantidad}] ;
+    
     console.log(pedido);
     this.pedidoService.create([pedido]).subscribe(
       () => this.router.navigate(['listado-pedidos'])

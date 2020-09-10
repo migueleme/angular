@@ -15,8 +15,8 @@
   </select><br>
   <label>dni: </label><input type="text" formControlName='dni'><br>
 
-  <div class="lineasDetalle" formArrayName="lineasDetalle">   <label>lineas Detalle</label>
-    <div class="lineaDetalle" [formGroupName]="i" *ngFor="let lineaDetalle of pedidoForm.controls['lineasDetalle'].controls; let i = index">
+  <div class="lineasPedido" formArrayName="lineasPedido">   <label>lineas Detalle</label>
+    <div class="lineaPedido" [formGroupName]="i" *ngFor="let lineaPedido of pedidoForm.controls['lineasPedido'].controls; let i = index">
       <label>codigoProducto: </label><input type="text" formControlName='codigoProducto'><br>
       <label>codigoProveedor: </label><input type="text" formControlName='codigoProveedor'><br>
       <label>cantidad: </label><input type="text" formControlName='cantidad'><br>

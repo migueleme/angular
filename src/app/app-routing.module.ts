@@ -16,6 +16,7 @@ const routes: Routes =
   { path:'listado-productos',component:ListadoProductosComponent},
   { path:'listado-pedidos',component:ListadoPedidosComponent},
   { path:'alta-pedido/:dni',component:AltaPedidoComponent},
+  { path:'alta-pedido',component:AltaPedidoComponent},
   { path:'alta-cliente',component:AltaClienteComponent},
   { path:'alta-producto',component:AltaProductoComponent},
   { path:'ficha-detalle-pedido/:id',component:FichaDetallePedidoComponent}

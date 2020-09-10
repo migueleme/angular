@@ -1,6 +1,7 @@
 import { Direccion } from './direccion';
 import { Cliente } from './cliente';
 import { Producto } from './producto';
+import { LineaPedido } from './LineaPedido';
 
 export class Pedido{
     id : number;
@@ -8,12 +9,7 @@ export class Pedido{
     direccion : Direccion;
     tipoDeEntrega: string;
     cliente : Cliente;
-    lineasPedido :[
-        {
-            producto: Producto,
-            cantidad: number
-          }
-    ]; 
+    lineasPedido : LineaPedido[];
   
     constructor(
         id? : number,
