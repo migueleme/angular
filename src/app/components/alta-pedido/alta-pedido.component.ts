@@ -70,17 +70,10 @@ eliminarLinea(index: number) {
       let cantidad = linea.cantidad;
       let producto = new  Producto(); 
       producto.codigo = codigo;
-      pedido.lineasPedido.push({producto, cantidad}) ;
+      pedido.lineasPedido.push({producto, cantidad});
       
     }
-         console.log(pedido.lineasPedido);
-
-   /* .array.forEach(element => {
-      console.log(element.get('codigoProducto').value);
-    });*/
-
-    
-    console.log(pedido);
+   
     this.pedidoService.create([pedido]).subscribe(
       () => this.router.navigate(['listado-pedidos'])
     )
