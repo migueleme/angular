@@ -3,9 +3,9 @@
 <br>
 <label>dni</label><input type="text" [(ngModel)]="cliente.dni" /><br>
 <label>nombre</label><input type="text" [(ngModel)]="cliente.nombre" /><br>
-<label>tarjetaGold</label><input type="text" [(ngModel)]="cliente.tarjetaGold" /><br>
+<label>Tarjeta Gold</label><input type="radio" name="valid" id="validTrue" (click)="cliente.tarjetaGold = true" [checked]="cliente.tarjetaGold"/><br>
 <label>apellido1</label><input type="text" [(ngModel)]="cliente.apellido1" /><br>
 <label>apellido2</label><input type="text" [(ngModel)]="cliente.apellido2" /><br>
 
 
-<button (click)= altaCliente()>CREAR</button>
+<button mat-button color="primary" (click)= altaCliente()>CREAR</button>
