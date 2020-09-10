@@ -1,14 +1,33 @@
-<table *ngIf="productos" style="border :solid 1px;">
-  <tr>
-    <th>codigo</th>
-    <th>nombre</th>
-    <th>peso</th>
-    <th>tipoProducto</th>
-  </tr>
-  <tr *ngFor="let producto of productos">
-    <td>{{producto.codigo.codigoProducto+" "+producto.codigo.codigoProveedor}}</td>
-    <td>{{producto.nombre}}</td>
-    <td>{{producto.peso}}</td>
-    <td>{{producto.tipoProducto}}</td>
-  </tr>
+<table mat-table [dataSource]="productos" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> Codigo(proveedor y producto) </th>
+    <td mat-cell *matCellDef="let element"> {{element.codigo.codigoProducto}} {{element.codigo.codigoProveedor}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Peso </th>
+    <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Tipo de producto </th>
+    <td mat-cell *matCellDef="let element"> {{element.tipoProducto}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+

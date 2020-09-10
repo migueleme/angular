@@ -8,7 +8,9 @@ import { ProductoService } from 'src/app/services/producto-service';
   styleUrls: ['./listado-productos.component.css']
 })
 export class ListadoProductosComponent implements OnInit {
-
+  
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  
   productos:Producto[] = undefined;
   
   constructor(private productoService:ProductoService) { }
@@ -17,5 +19,9 @@ export class ListadoProductosComponent implements OnInit {
     this.productoService.getAll().subscribe(
       data => this.productos = data
     )
+  
   }
+  
+  
+  
 }

@@ -1,9 +1,32 @@
 <br>
 <form [formGroup]= "productoForm" (submit)=create()>
-  <LABEL>codigoProducto</LABEL> <input type="text" formControlName='codigoProducto'><br>  
-  <LABEL>codigoProveedor</LABEL> <input type="text" formControlName='codigoProveedor'><br>  
-  <LABEL>nombre</LABEL> <input type="text" formControlName='nombre'><br>  
-  <LABEL>peso</LABEL> <input type="text" formControlName='peso'><br>  
-  <LABEL>tipoProducto</LABEL><select formControlName='tipoProducto' ><option>FRAGIL</option><option>NO_FRAGIL</option></select><br>
-  <button>Crear</button>          
+  <mat-form-field appearance="fill">
+    <mat-label>codigoProducto</mat-label>
+    <input matInput formControlName="codigoProducto">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>codigoProveedor</mat-label>
+    <input matInput formControlName="codigoProveedor">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Peso</mat-label>
+    <input matInput formControlName="peso">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>tipo de producto</mat-label>
+    <mat-select formControlName = "tipoProducto">
+      <mat-option value="FRAGIL">FRÁGIL</mat-option>
+      <mat-option value="NO_FRAGIL">NO FRÁGIL</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-button color="primary">Crear</button>
+  </div> 
+           
 </form> 

@@ -14,6 +14,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AltaClienteComponent } from './components/alta-cliente/alta-cliente.component';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
 import { FichaDetallePedidoComponent } from './components/ficha-detalle-pedido/ficha-detalle-pedido.component';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {A11yModule} from '@angular/cdk/a11y';
@@ -81,9 +83,6 @@ import {OverlayModule} from '@angular/cdk/overlay';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatTableModule,
-    MatFormFieldModule,
     A11yModule,
     CdkStepperModule,
     CdkTableModule,

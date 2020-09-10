@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Producto } from 'src/app/model/producto';
 import { ProductoService } from 'src/app/services/producto-service';
 import { Router } from '@angular/router';
@@ -14,6 +14,10 @@ export class AltaProductoComponent implements OnInit {
   productoForm: FormGroup ;
 
   constructor(private  formBuilder:FormBuilder, private productoService:ProductoService, private router:Router) { }
+
+  tipoProducto = new FormControl();
+
+  tipoProductoList: string[] = ['Frágil', 'No frágil'];
 
   ngOnInit() {
       this.productoForm = this.formBuilder.group({
