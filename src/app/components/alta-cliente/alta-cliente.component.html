@@ -1,12 +1,24 @@
 <h2>Alta cliente</h2>
-{{cliente | json}}
-<br>
-<form>
-    <label>dni</label><input type="text" [(ngModel)]="cliente.dni" /><br>
-    <label>nombre</label><input type="text" [(ngModel)]="cliente.nombre" /><br>
-    <label>TarjetaGold</label><input type="radio" name="valid" id="validTrue" (click)="cliente.tarjetaGold = true" [checked]="cliente.tarjetaGold"/><br>
-    <label>apellido1</label><input type="text" [(ngModel)]="cliente.apellido1" /><br>
-    <label>apellido2</label><input type="text" [(ngModel)]="cliente.apellido2" /><br>
-    <button mat-button color="primary" (click)= altaCliente()>CREAR</button>
-</form>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>dni</mat-label>
+        <input matInput type="text" [(ngModel)]="cliente.dni" />
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="cliente.nombre" />
+    </mat-form-field><br>
 
+    <mat-form-field appearance="fill">
+        <mat-label>apellido1</mat-label>
+        <input matInput type="text" [(ngModel)]="cliente.apellido1" />
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>apellido2</mat-label>
+        <input matInput type="text" [(ngModel)]="cliente.apellido2" />
+    </mat-form-field> <br>
+    <section >
+        <mat-checkbox [(ngModel)]="cliente.tarjetaGold">tarjeta gold</mat-checkbox>
+    </section>
+    <button mat-button color="primary" (click)= altaCliente()>CREAR</button>
+</div>
