@@ -60,6 +60,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,6 @@ import {OverlayModule} from '@angular/cdk/overlay';
     AltaClienteComponent,
     AltaProductoComponent,
     FichaDetallePedidoComponent
-    
   ],
   imports: [
     AppRoutingModule,
@@ -129,5 +129,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
+
